@@ -1,1 +1,101 @@
+body{
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:20px;
+background:#f5f5f5;
+}
 
+header{
+text-align:center;
+margin-bottom:30px;
+}
+
+main{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+figure{
+background:white;
+padding:10px;
+border:2px solid #ddd;
+text-align:center;
+}
+
+img{
+width:100%;
+}
+
+figcaption{
+margin-top:10px;
+font-weight:bold;
+}
+
+/* TABLET */
+
+@media screen and (min-width:772px){
+
+main{
+grid-template-columns:1fr 1fr;
+}
+
+figure{
+border-radius:50%;
+overflow:hidden;
+}
+
+figure:last-child{
+grid-column:1 / span 2;
+}
+
+}
+
+/* DESKTOP */
+
+@media screen and (min-width:992px){
+
+main{
+grid-template-columns:1fr 1fr 1fr;
+}
+
+figure{
+border-radius:0;
+}
+
+figure:nth-child(3n){
+grid-column:span 2;
+}
+
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce){
+
+html{
+scroll-behavior:auto;
+}
+
+}
+
+/* DARK MODE */
+
+@media (prefers-color-scheme: dark){
+
+figure{
+background:#333;
+color:#fff;
+border:2px solid black;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+}
